@@ -33,6 +33,11 @@
             android:screenOrientation="portrait"/>
 
         <activity
+            android:name="sample.com.tesimage.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>

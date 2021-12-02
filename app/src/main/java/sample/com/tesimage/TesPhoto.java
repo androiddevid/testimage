@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,8 +33,18 @@ import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.listener.multi.BaseMultiplePermissionsListener;
 import com.yalantis.ucrop.UCrop;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
+
 import java.io.File;
 import java.io.IOException;
+import org.opencv.imgproc.Imgproc;
 
 import id.zelory.compressor.Compressor;
 
@@ -295,8 +306,38 @@ public class TesPhoto extends AppCompatActivity {
                         .setDestinationDirectoryPath(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+"/"+Utility.GALLERY_DIRECTORY_NAME).getAbsolutePath())
                         .compressToFile(fileUploaded);
                 file_path_str = fileUploaded.getAbsolutePath();
-                lyCancel.setVisibility(View.VISIBLE);
 
+//                    Bitmap photo = bitmap_upload;
+//
+//                    Toast.makeText(getBaseContext(), "It works!", Toast.LENGTH_LONG).show();
+//                    Mat imgSource = new Mat(), imgCirclesOut = new Mat();
+//
+//                    Utils.bitmapToMat(photo , imgSource);
+//
+//                    Imgproc.cvtColor(imgSource, imgSource, Imgproc.COLOR_BGR2GRAY);
+//                    Imgproc.GaussianBlur( imgSource, imgSource, new Size(9, 9), 2, 2 );
+//                    Imgproc.HoughCircles( imgSource, imgCirclesOut, Imgproc.CV_HOUGH_GRADIENT, 1, imgSource.rows()/8, 200, 100, 0, 0 );
+//
+//                    float circle[] = new float[3];
+//
+//                    for (int i = 0; i < imgCirclesOut.cols(); i++)
+//                    {
+//                        imgCirclesOut.get(0, i, circle);
+//                        org.opencv.core.Point center = new org.opencv.core.Point();
+//                        center.x = circle[0];
+//                        center.y = circle[1];
+//                        Imgproc.circle(imgSource, center, (int) circle[2], new Scalar(0,0,255), 5);
+//                    }
+//                    Bitmap bmp = Bitmap.createBitmap(photo.getWidth(), photo.getHeight(), Bitmap.Config.ARGB_8888);
+//                    Utils.matToBitmap(imgSource, bmp);
+//
+//
+//                Glide.with(TesPhoto.this)
+//                        .load(bmp)
+//                        .into(imageView);
+
+
+                lyCancel.setVisibility(View.VISIBLE);
                 lyUpload.setVisibility(View.GONE);
 
                 lyGalery.setVisibility(View.GONE);
@@ -313,13 +354,26 @@ public class TesPhoto extends AppCompatActivity {
         }
     }
 
+    public static final String TAG = "src";
+    private BaseLoaderCallback loaderCallback = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case SUCCESS:
+                    Log.i(TAG, "OpenCV loaded successfully");
 
+                    break;
+                default:
+                    super.onManagerConnected(status);
+            }
+        }
+    };
 
 
     @Override
     protected void onResume() {
         super.onResume();
-
+//        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, loaderCallback);
     }
 
     @Override

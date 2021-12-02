@@ -26,6 +26,7 @@ public class SplashScreen extends Activity  {
 		 new Handler().postDelayed(() -> {
 
 		   Intent intent = new Intent(SplashScreen.this, TesPhoto.class);
+//		   Intent intent = new Intent(SplashScreen.this, MainActivity.class);
 		   startActivity(intent);
 
 		   finish();

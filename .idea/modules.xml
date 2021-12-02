@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CircleDetection/CircleDetection.iml" filepath="$PROJECT_DIR$/.idea/modules/CircleDetection/CircleDetection.iml" group="testimage/CircleDetection" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="testimage/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary310/openCVLibrary310.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary310/openCVLibrary310.iml" group="testimage/openCVLibrary310" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testimage.iml" filepath="$PROJECT_DIR$/.idea/modules/testimage.iml" group="testimage" />
+    </modules>
+  </component>
+</project>
