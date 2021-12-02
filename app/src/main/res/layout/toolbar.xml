@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    app:contentInsetStartWithNavigation="0dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <LinearLayout
+        android:id="@+id/lyJudul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Judul Header"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:textColor="@color/putih"
+            android:textSize="@dimen/a20"
+            android:singleLine="true">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutPencarian"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:id="@+id/txtCari"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:singleLine="true">
+
+        </EditText>
+
+
+
+        <!--<ImageButton
+            android:id="@+id/btnClear"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_close"
+            android:tint="@color/mdtp_white"
+            android:onClick="Clear"
+            android:visibility="visible" />-->
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>
+
